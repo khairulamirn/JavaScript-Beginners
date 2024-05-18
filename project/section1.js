@@ -1,5 +1,13 @@
+// freeCodeCamp.org - "JavaScript Course for Beginners 2024" https://www.youtube.com/watch?v=Zi-Q0t4gMC8
+
 // TO RUN THE CODE OPEN TERMINAL ( CTRL + ~ ) AND TYPE (node "your file name")
+// TO GET OUT OF NODE IN TERMINAL ( CTRL + C or type .exit)
 // ('') ("") can be used 
+
+// SECTION 1
+
+// console (for execute data or print messages or values)
+console.log('Hello World');
 
 // VARIABLES (can be changed) storage for data 
 // let = modern way var = old way 
@@ -58,7 +66,6 @@ console.log(typeof firstName);
 firstName = true;
 console.log(typeof firstName);
 
-
 //  OBJECTS 
 let biodata = {
     // keys are represented internally as a string
@@ -83,7 +90,7 @@ console.log(biodata.name);
 let property = 'age';
 console.log( biodata[property] );
 
-// ARRAYS 
+// ARRAYS (build-in-data structure)
 let productColors = ['blue', 'green',];
 console.log(productColors);
 
@@ -99,3 +106,30 @@ console.log(typeof productColors);
 
 // length property (number of element in array)
 console.log(productColors.length);
+
+// FUNCTIONS
+function sayHi() {
+    console.log('Hi');
+}
+sayHi ();
+
+// parameter variable [specify a parameter list within the parentheses '()']
+function sayHello(name) {
+    console.log('Hello, ' + name);
+}
+sayHello ('Khairulamirin');
+
+// TYPES OF FUNCTIONS
+// return keyword
+function multiply(num1, num2) {
+    return num1 * num2;
+}
+
+console.log( multiply (2, 2) );
+
+// if no return keyword = undefined
+function sum(num3, num4) {
+    const product = num3 + num4;
+}
+
+console.log( sum (2, 2) );

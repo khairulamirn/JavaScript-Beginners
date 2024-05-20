@@ -8,8 +8,10 @@
 // let num = 1 (current)
 // num = num + 1; num +=1; num++ (current get updated value); ++num (using updated value then increment);
 
-// ASSIGNMENT OPERATOR (single equal = sign)
+
+// ASSIGNMENT OPERATOR (single equal sign =)
 let programmingLanguage = 'JavaScript';
+
 
 // COMPARISON OPERATORS (deal with number) 
 //  > greater than, >= greater than or equal to, < less than, <= less than or equal to 
@@ -19,7 +21,8 @@ let num2 = 10;
 const isNum1Greater = num1 > num2;
 console.log( isNum1Greater );
 
-// EQUALITY OPERATORS 
+
+// EQUALITY OPERATORS (== loose equlity, === strict equality)
 let a = 2; // number data type
 let b = '2'; // string data type
 
@@ -33,14 +36,16 @@ console.log(a === b); // without any convertion (false, because '2' is not conve
 console.log(1 == '1');
 console.log(true == '1');
 
-// THE TERNARY OPERATOR (variable = condition ? expressionIfTrue : expressionIfFalse;) (conditional operator)
+
+// THE TERNARY OPERATOR (variable = condition ? expressionIfTrue : expressionIfFalse;) ( for conditional operator or conditionally assigning a value) (provides syntactic sugar which is shortcut)
 let age = 16;
 const canDrive = age >=16 ? true : false;
-console.log(canDrive);
+console.log(canDrive); // Output (true)
 
 let points = 110;
 const customerType = points > 100 ? 'gold' : 'silver';
-console.log(customerType);
+console.log(customerType); // Outout (gold)
+
 
 // LOGICAL OPERATORS (decisions based on multiple conditions), (used to perform boolean operations),(can be applied to any type), (to determine logical relationship between the operant), 
 // (truthy or falsy of the combine expression)
@@ -99,3 +104,25 @@ let defaultName = "Guest";
 
 let displayName = id ?? defaultName;
 console.log(displayName); // Output: "Guest"
+
+
+// LOGICAL OPERATORS WITH NON-BOOLEANS 
+// Falsy values is the non-booleans values that when JS coverts this values into Boolean values via 'type coercion' it evaluates to false.
+// (Falsy values in JS are undefined, null, 0, false, " {empty string}, NaN {not a number}) (convert non-boolean value into boolean value)
+
+// false || 'Khairul'  (Output: Khairul)
+// false || 1 || 2 (Output: 1, because JS evaluates expressions left to right and then JS can perform shotr-circuit evaluation)
+
+// more example
+let usersChosenColor = 'blue'; //if falsy values then JS will evaluates to defaultColor
+let defaultColor = 'green';
+
+const currentWebsiteColor = usersChosenColor || defaultColor;
+
+console.log(currentWebsiteColor); // Output: blue
+
+
+// OPERATOR PRECEDENCE 
+// will use the same order of precedence used in math (parentheses, exponents, multiplications, divisons, and subtraction)
+let n = 5 + (5 * 4);
+console.log(n);

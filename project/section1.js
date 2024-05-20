@@ -9,11 +9,13 @@
 // console (for execute data or print messages or values)
 console.log('Hello World');
 
+
 // VARIABLES (can be changed) storage for data 
 // let = modern way var = old way 
 let message = 'Hello!';
 message = 'World!';
 console.log(message);
+
 
 // CONSTANT (can't be changed)
 const christmas_2024 = '12.25.2024';
@@ -22,6 +24,7 @@ console.log(christmas_2024);
 // snake_case (for constant)
 const COLOR_GREEN = 'green';
 console.log(COLOR_GREEN);
+
 
 // PRIMITIVE TYPES (can only contaion single thing example; string, number or Boolean)
 // string data type
@@ -49,14 +52,8 @@ favoriteFruit = null;
 // symbol data type
 const uniqueKey = Symbol("foo");
 
-//  REFERENCE TYPE
-// object data type (more complex structure) (more than one variable all in one)
-let course = {
-    name:'JavaScript for Beginners',
-    hours: 3
-};
 
-// DYNAMIC TYPING 
+// DYNAMIC TYPING (ability to initialize to one data type) (example string to number) (typescript)
 let firstName = 'Khairul';
 console.log(typeof firstName);
 
@@ -66,7 +63,10 @@ console.log(typeof firstName);
 firstName = true;
 console.log(typeof firstName);
 
-//  OBJECTS 
+
+//  OBJECTS (to store key value pairs)
+//  REFERENCE TYPE 
+// object data type (more complex structure) (more than one variable all in one)
 let biodata = {
     // keys are represented internally as a string
     name: 'Khairulamirin bin Mohamed Lamin', // property of the object
@@ -90,11 +90,12 @@ console.log(biodata.name);
 let property = 'age';
 console.log( biodata[property] );
 
+
 // ARRAYS (build-in-data structure)
 let productColors = ['blue', 'green',];
 console.log(productColors);
 
-//  to access one element in the list 
+//  to access one element in the list (start with index 0 for first element)
 console.log(productColors[0]);
 
 // different data types in an array (to show the flexibility of JavaScript)
@@ -102,10 +103,11 @@ productColors[1] = 42;
 console.log(productColors[1]);
 
 // typeof
-console.log(typeof productColors);
+console.log(typeof productColors); 
 
 // length property (number of element in array)
 console.log(productColors.length);
+
 
 // FUNCTIONS
 function sayHi() {
@@ -118,6 +120,7 @@ function sayHello(name) {
     console.log('Hello, ' + name);
 }
 sayHello ('Khairulamirin');
+
 
 // TYPES OF FUNCTIONS
 // return keyword

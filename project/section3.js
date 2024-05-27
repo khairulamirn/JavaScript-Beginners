@@ -147,6 +147,7 @@ for (let element of numbers3) {
 }
 
 // BREAK AND CONTINUE STATEMENTS
+// BREAK (for loop, switch case statement)
 for (let i = 0; i < 10; i++) {
     if (i === 5) {
         break; // exits the loop when i is 5
@@ -162,3 +163,89 @@ while (e < 10) {
     console.log(e);
     e++;
 }
+
+// CONTINUE (skip the current iteration of the loop and proceed to the next iteration ) (keyword: skip)
+for (let i = 0; i < 10; i++) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    console.log(i);
+}
+
+// while loop
+let p = 0
+while (p < 10) {
+    p++;
+    if (p % 2 === 0) {
+        continue;
+    }
+    console.log(p);
+} 
+
+// do while loop
+let o = 0;
+do {
+    o++;
+    if (o % 2 === 0) {
+        continue;
+    }
+    console.log(o);
+} while (i < 10);
+
+// for - in loop (for object)
+const obj = {a:1, b:2, c:3, d:4, e:5};
+for (let key in obj) {
+    if (obj[key] % 2 === 0) {
+        continue;
+    }
+    console.log(obj[key]);
+} 
+
+// for of loop (for object)
+const arr = [1, 2, 3, 4, 5];
+for (let element of arr) {
+    if (element % 2 === 0) {
+        continue;
+    }
+    console.log(element);
+}
+
+// EXERCISE
+// return max value
+function maxNum(num1, num2) {
+    return num1 >= num2 ? num1 : num2;
+}
+
+console.log (maxNum(2,1));
+
+// if-else divisible 3, 5 return FizzBuzz
+function fizzBuzz(number) {
+    if (number % 3 === 0 && number % 5 === 0)
+        return 'FizzBuzz';
+    else if (number % 3 === 0)
+        return 'Fizz';
+    else if (number % 5 === 0)
+        return 'Buzz';
+    else 
+        return number;
+}
+
+console.log(fizzBuzz(15));
+
+// even and odd numbers 
+function displayEvenNumbers(array) {
+    for (const number of array) {
+        if (number % 2 === 0)
+            console.log(number);
+    }
+}
+
+function displayOddNumbers(array) {
+    for (const number of array) {
+        if (number % 2 != 0)
+            console.log(number);
+    }
+}
+
+displayEvenNumbers([1, 2, 3 ,4 ,5 ,6, 7, 8, 9, 10]);
+displayOddNumbers([1, 2, 3 ,4 ,5 ,6, 7, 8, 9, 10]);

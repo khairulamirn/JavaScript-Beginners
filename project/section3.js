@@ -147,7 +147,7 @@ for (let element of numbers3) {
 }
 
 // BREAK AND CONTINUE STATEMENTS
-// BREAK (for loop, switch case statement)
+// BREAK (exit immidietly) (for loop, switch case statement)
 for (let i = 0; i < 10; i++) {
     if (i === 5) {
         break; // exits the loop when i is 5

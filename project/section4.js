@@ -143,4 +143,187 @@ const person2 = {
     name: 'Khairul'
 };
 
-console.log(person.constructor);
+console.log(person2.constructor);
+
+// these 2 means the same thing
+// let newObj = {}; syntatic sugar
+// let newObj = new Object();
+
+new String(); // 'Khairul'
+new Boolean(); // true, false
+new Number(); // 1,2,3
+
+// QUIZ
+
+/* 
+    1. What is the constructor property?
+
+    ANS: Is a property that exist for all objects in JavaScript. Can access it with either the dot notation bracket notation. To instantiate and create that object.
+*/
+
+
+//  FUNCTIONS ARE OBJECTS 
+
+// have properties and methods
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+const n = add; 
+
+// invoke and paste arguments
+console.log(n (2,2) );
+
+console.log(add.length);
+
+// Constructor function (object in memory)
+function Programmer(name) {
+    this.name = name;
+    this.writeCode = function() {
+        console.log("Code in JavaScript");
+    }
+}
+
+console.log(Programmer.length);
+console.log(Programmer.constructor);
+
+const Programmer2 = new Function('name', `
+    this.name = name;
+    this.writeCode = function () {
+        console.log("Code in JavaScript");
+    }
+`);
+
+const newProgrammer = new Programmer2 ('Khairul');
+console.log(newProgrammer);
+newProgrammer.writeCode();
+
+// QUIZ
+
+/* 
+    1. How functions are objects in JavaScript?
+
+    ANS: This is because the have properties and method. What distinguishes them from other objects is that functions can be called.
+*/
+
+
+//  VALUE VS REFERENCE TYPES
+
+// Note: Arrays and functions also fall into the object category
+
+// Primitive values are passed by copy not by reference
+let a = 10;
+let b = a;
+
+a = 20;
+
+console.log(a, b); // 20 10 (refer to different memory addresses)
+
+// another example
+// Objects are copied by reference
+let c = { value: 20};
+let d = c;
+
+c.value = 100;
+console.log(c, d); // { value: 100} { value: 100} (referencing the same object and memory) 
+
+// QUIZ
+
+/* 
+    1. What are primitive values and what are they passed by?
+
+    ANS: Primitive values simple values such as number, string, boolean, bigint, null, undefined and they are passed by copy.
+
+    2. What are object values and what are they passed by?
+
+    ANS: Object values refers to key value pairs this also include arrays and they are passed by reference.
+*/
+
+
+// ENUMERATING PROPERTIES OF AN OBJECT 
+
+// example
+// array
+let num = [1, 2, 3, 4, 5];
+// for of loops (array)
+for (const elements of num) {
+    console.log(elements);
+}
+
+// object
+const cat = {
+    name: 'Max',
+    age: 5,
+    eyeColor: 'blue'
+} 
+// for in loops 
+for (const key in cat) {
+    console.log(cat[key]);
+}
+
+// Object is a build-in class in JavaScript and it has properties and methods (functon defined within an object)
+
+// to get the keys of object 
+const keysCat = Object.keys(cat); 
+console.log(keysCat); // as an array
+
+// Object.values
+const valuesCat = Object.values(cat);
+console.log(valuesCat);
+
+// key value pairs in array 
+const entriesCat = Object.entries(cat);
+console.log(entriesCat); // nested array
+
+
+// for of loops with Object
+
+// for (const key of Object.keys(cat)) {
+//     console.log(key);
+// }
+
+// for (const values of Object.values(cat)) {
+//     console.log(values);
+// }
+
+// for (const entry of Object.entries(cat)) {
+//     console.log(entry);
+// }
+
+// QUIZ 
+/* 
+    1. How can you enumerate over the properties of an object?
+
+    ANS: Using for in loop to iterate over the keys of an object. We can also use build-in object class iterating over the keys with Objcet.keys enumerating over the values Object.values and enumerating over the properties with object.entries.
+*/
+
+
+//  CLONING AN OBJECT (to change the value but not change the other) (need to have it to be two independent objects accomplished by creating clone of an object)
+let e = { value: 10};
+let f = {};
+
+// properties and method of e will be copied to f
+Object.assign(f, e)
+
+f.value = 20;
+console.log(e, f);
+
+//  Spread operator (...)
+let g = { value: 10};
+let h = {...g};
+
+h.value = 20;
+console.log(g, h);
+
+// QUIZ 
+/* 
+    1. How would you make a clone of an object?
+
+    ANS: Using Object.assign. For the first argument you would pass the target object then you can pass in one or more Source objects. More modern syntax known as the spread operator by the use of three dots before the variable that references the object.
+*/
+
+
+//  GARBAGE COLLECTION 
+// Don't have to explicitly deallocate memory. JS has GC meaning that it will self-manage itself and find the variables and objects that are no longer being used and will intelligently free up that memory.
+
+// The Build in Math Function

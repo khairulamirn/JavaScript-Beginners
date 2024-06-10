@@ -323,7 +323,116 @@ console.log(g, h);
 */
 
 
-//  GARBAGE COLLECTION 
+//  GARBAGE COLLECTION (C# Java JavaScript)
 // Don't have to explicitly deallocate memory. JS has GC meaning that it will self-manage itself and find the variables and objects that are no longer being used and will intelligently free up that memory.
 
-// The Build in Math Function
+
+// THE BUILD IN MATH FUNCTION (commonly used ones)
+// round (normal)
+Math.round(3.14); // Output: 3 
+Math.round(3.6); // 4
+
+// round down
+Math.floor(4.6); // 5
+
+// round up 
+Math.ceil(4.2) // 5
+
+// Max num 
+Math.max(1, 2); // 2 (can have more than 2)
+
+// Min num 
+Math.min(1, 2, 3); // 1
+
+// Power of base, (square/cube or anynumber)
+Math.pow(2, 3); // 8
+
+// square root 
+Math.sqrt(25); // 5
+
+// random method 
+Math.random(); //between 0 and 1
+
+
+let min = 1;
+let max = 10;
+
+const randomNum = Math.round( Math.random() * (max - min) + min );
+console.log(randomNum);
+
+
+// STRING METHODS 
+
+// String literal ("", '', ``)
+const name = 'Steven';
+console.log(typeof name); // string
+
+const anotherName = new String('Joe');
+console.log(typeof anotherName); // object
+
+// include method
+let sentence = "A new sentence.";
+const doesIncludeNew = sentence.includes('new');
+console.log(doesIncludeNew); // true
+
+// index of method
+console.log(sentence[3]); // e 
+
+const startWithA = sentence.startsWith('A');
+console.log(startWithA); // true
+
+const endsWithA = sentence.endsWith('A');
+console.log(endsWithA); // false
+
+// replace method
+let updatedSentence = sentence.replace('new', 'short');
+console.log(updatedSentence); // A short sentence.
+
+// trim method (trimStart, trimEnd, trimLeft and trimRight are deprecated)
+trimmedSentence = sentence.trim();
+console.log(trimmedSentence); // remove space from start and end of sentence.
+
+// split method (common in interviews)
+const wordsInSentence = sentence.split(' ');
+console.log(wordsInSentence); // ['A', 'new', 'sentence.']
+
+// toUpperCase and toLowercase method
+let email = 'TestEmail@Gmail.com';
+let lowerCaseEmail = email.toLowerCase();
+console.log(lowerCaseEmail); // testemail@gmail.com
+
+let upperCaseEmail = email.toUpperCase();
+console.log(upperCaseEmail); // TESTEMAIL@GMAIL.COM
+
+
+// TEMPLATE LITERALS (`) (string interpolation, alterntive syntax by using backtick `${}`) (rather than having to use concatenation with + operator)
+let firstName1 = 'Khairul';
+let lastName = 'Lamin';
+
+// let fullName = firstName1 + ' ' + lastName;
+
+// cleaner syntax
+let fullName = `${firstName1} ${lastName}`;
+console.log(fullName);
+
+
+// THE DATE OBJECT (stores the date and time, also method for data and time management) (common to store creation and modification times for a resource) (can be initialized by multiple ways)
+
+// let now = new Date(); 
+// now
+
+// let Jan01_1970 = new Date(0);
+// Jan01_1970
+
+// let Dec31_1969 = new Date(-24 * 3600 * 1000);
+// console.log(Dec31_1969);
+
+// string date
+// const dateOne = new Date ('December 25 2024 16:08');
+// const dateOne = new Date (2024, 0 , 1); 0 is month
+
+// method 
+// now.getFullYear();
+// now.getMonth();
+// now.getDate();
+// now.getTimezoneOffset(); (!)
